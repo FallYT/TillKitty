@@ -4,21 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Till Kitty - En hälsning från en nära vän</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
     body, html {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(45deg, #7f8fa6, #f9cdda);
+      background: linear-gradient(45deg, #ffccd5, #ffb6c1);
       color: #333;
       overflow: hidden;
       flex-direction: column;
+      background-size: 200% 200%;
+      animation: gradientAnimation 6s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
@@ -26,27 +34,31 @@
       max-width: 900px;
       width: 100%;
       padding: 40px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
       margin: 10px;
+      position: relative;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       font-weight: 600;
       margin-bottom: 20px;
-      color: #2e2b8d;
+      color: #ff6b81;
+      animation: fadeIn 1s ease-in-out;
     }
 
     h2 {
       font-size: 1.5em;
-      color: #777;
+      color: #666;
       margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .accordion {
-      background-color: #f0f0f0;
+      background-color: #f9c5d1;
       color: #444;
       cursor: pointer;
       padding: 18px;
@@ -57,16 +69,16 @@
       font-size: 1.3em;
       transition: background-color 0.4s ease;
       margin-top: 10px;
-      border-radius: 5px;
+      border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .accordion:hover {
-      background-color: #f1f1f1;
+      background-color: #ff9fb2;
     }
 
     .active, .accordion:hover {
-      background-color: #ff9f9f;
+      background-color: #ff80a6;
     }
 
     .panel {
@@ -75,7 +87,7 @@
       display: none;
       overflow: hidden;
       font-size: 1.1em;
-      border-radius: 5px;
+      border-radius: 8px;
       margin-top: 10px;
     }
 
@@ -83,10 +95,11 @@
       font-size: 1.2em;
       line-height: 1.6;
       margin: 20px 0;
+      color: #555;
     }
 
     button {
-      background-color: #7f8fa6;
+      background-color: #ff6b81;
       color: white;
       padding: 15px 30px;
       border: none;
@@ -98,22 +111,65 @@
     }
 
     button:hover {
-      background-color: #6a7d93;
+      background-color: #ff4d6a;
+    }
+
+    /* Heart Animation */
+    @keyframes hearts {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #ff80a6;
+      animation: hearts 3s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .flower {
+      position: absolute;
+      bottom: -40px;
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 30px;
+      animation: flowerAnimation 4s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes flowerAnimation {
+      0% { transform: translateX(50%) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; transform: translateX(50%) rotate(90deg); }
+      100% { transform: translateX(50%) rotate(180deg); opacity: 0; }
     }
 
     /* Mobile Styling */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2em;
+        font-size: 2.5em;
       }
 
       h2 {
-        font-size: 1.3em;
+        font-size: 1.4em;
       }
 
       .accordion {
-        font-size: 1.1em;
-        padding: 15px;
+        font-size: 1.2em;
+        padding: 16px;
       }
 
       .panel p {
@@ -129,7 +185,7 @@
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 1.8em;
+        font-size: 2em;
       }
 
       h2 {
@@ -154,6 +210,16 @@
 </head>
 <body>
 
+  <!-- Animated Hearts -->
+  <div class="hearts">
+    ❤️❤️❤️❤️
+  </div>
+
+  <!-- Flower Animation -->
+  <div class="flower">
+    🌸🌼🌸
+  </div>
+
   <div class="container">
     <h1>Till Kitty</h1>
     <h2>En kärleksfull hälsning från en nära vän</h2>
@@ -168,29 +234,21 @@
       <button class="accordion">Hur du gör mig glad</button>
       <div class="panel">
         <p>Du har den här fantastiska förmågan att få mig att skratta, även när saker inte känns så bra. Jag älskar de små sakerna som du gör utan att ens tänka på det – ditt skratt, din värme och hur du alltid får mig att känna mig bekväm och förstådd.</p>
-        <p>Det känns som om vi kan prata om allt, och ingen av oss dömer. Det skapar ett sådant förtroende och gör att jag känner mig sedd och hörd på ett sätt jag sällan upplever med andra. Det är så mycket du gör för mig, och du kanske inte ens inser det ibland, men du betyder så mycket för mig.</p>
+        <p>Det känns som om vi kan prata om allt, och ingen av oss dömer. Det skapar ett sådant förtroende och gör att jag känner mig sedd och hörd på ett sätt jag sällan upplever med andra. Det är så mycket du gör för mig, och jag vill bara säga tack för att du finns.</p>
       </div>
 
-      <button class="accordion">Det som gör dig unik</button>
+      <button class="accordion">Till slut</button>
       <div class="panel">
-        <p>Det finns så mycket som gör dig unik, Kitty. Förutom att du är otroligt rolig, så har du ett stort hjärta och en förmåga att förstå människor på ett sätt som få andra kan. Du ser alltid det bästa i människor, och du har en sådan positiv energi som får alla runt omkring dig att må bättre.</p>
-        <p>Din vänlighet, din ärlighet och hur du bryr dig om alla runt omkring dig är verkligen något jag beundrar. Jag känner mig så lycklig att kunna kalla dig min vän och jag ser verkligen fram emot många fler minnen tillsammans, oavsett vad livet har att erbjuda.</p>
+        <p>Jag vill att du ska veta att du betyder otroligt mycket för mig. Du är mer än en vän för mig, och jag hoppas att vi kommer att fortsätta skapa minnen tillsammans. Det är något speciellt med oss, och jag tror verkligen att vi har en stark förbindelse som vi båda värderar mycket.</p>
+        <p>Så här är min lilla hemlighet: Jag gillar dig mer än bara som vän, men jag vill att du ska känna dig helt bekväm. Jag vill bara att du ska veta att jag bryr mig mycket om dig, oavsett vad.</p>
       </div>
 
-      <button class="accordion">Avslutning</button>
-      <div class="panel">
-        <p>Det här kanske låter som något jag borde ha sagt tidigare, men jag vill verkligen att du ska veta hur mycket du betyder för mig. Jag värdesätter vår vänskap mer än jag kan beskriva och jag ser fram emot alla stunder vi har kvar att dela. Du är en fantastisk person och jag hoppas att du alltid känner att du har mig vid din sida.</p>
-        <p>Jag hoppas vi kan fortsätta vara där för varandra och skapa ännu fler magiska ögonblick, skratt och minnen. Tänk på mig som en vän som alltid finns där, oavsett vad som händer.</p>
-      </div>
-
-      <button onclick="alert('Jag är så glad att ha dig som vän, Kitty!')">Jag är glad att ha dig som vän!</button>
     </div>
   </div>
 
   <script>
-    // Accordion functionality
     var acc = document.getElementsByClassName("accordion");
-    for (let i = 0; i < acc.length; i++) {
+    for (var i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
