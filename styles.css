@@ -14,7 +14,7 @@ body, html {
   position: relative;
 }
 
-/* Background Animation */
+/* Bakgrund Animationer */
 @keyframes heartsAnimation {
   0% { transform: scale(0); opacity: 0; }
   50% { transform: scale(1.5); opacity: 1; }
@@ -27,7 +27,7 @@ body, html {
   100% { opacity: 0; transform: translateY(-50%) rotate(360deg); }
 }
 
-/* Hearts and Birds Animation */
+/* Bakgrundselement - Hjärtan */
 .hearts {
   position: absolute;
   top: 10%;
@@ -39,16 +39,19 @@ body, html {
   z-index: -1;
 }
 
+/* Bakgrundselement - Fåglar */
 .birds {
   position: absolute;
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 40px;
+  color: #ff6b81;
   animation: heartsAnimation 6s ease-in-out infinite;
   z-index: -1;
 }
 
+/* Bakgrundselement - Blommor */
 .flower {
   position: absolute;
   bottom: -10%;
@@ -131,36 +134,19 @@ h2 {
   max-height: 200px; /* Scrollable content */
 }
 
-/* Button Styles */
-button {
-  background-color: #ff6b81;
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.3em;
-  margin-top: 20px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: #ff4d6a;
-  transform: scale(1.05);
-}
-
 /* Mobile Responsive */
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5em;
   }
 
-  h2 {
-    font-size: 1.2em;
-  }
-
   .accordion {
     font-size: 1.2em;
     padding: 15px;
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
