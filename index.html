@@ -5,212 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Till Kitty - En hälsning från en nära vän</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Global Styles */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f8f8f8;
-      color: #333;
-      overflow: hidden;
-      flex-direction: column;
-      position: relative;
-    }
-
-    /* Background Animation */
-    @keyframes backgroundColorChange {
-      0% { background-color: #ff6b81; }
-      50% { background-color: #ffccd5; }
-      100% { background-color: #ffb6c1; }
-    }
-
-    /* Hearts and Birds Animation */
-    @keyframes heartsAnimation {
-      0% { transform: scale(0); opacity: 0; }
-      50% { transform: scale(1.5); opacity: 1; }
-      100% { transform: scale(0); opacity: 0; }
-    }
-
-    .hearts {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 36px;
-      color: #ff80a6;
-      animation: heartsAnimation 4s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    .birds {
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 40px;
-      animation: heartsAnimation 6s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    /* Container Styles */
-    .container {
-      text-align: center;
-      max-width: 90%;
-      width: 100%;
-      padding: 30px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-      position: relative;
-      transition: all 0.3s ease-in-out;
-    }
-
-    /* Title Styles */
-    h1 {
-      font-size: 3em;
-      font-weight: 600;
-      color: #ff6b81;
-      margin-bottom: 10px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    h2 {
-      font-size: 1.3em;
-      color: #555;
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    /* Accordion Styles */
-    .accordion {
-      background-color: #ffccd5;
-      color: #444;
-      cursor: pointer;
-      padding: 20px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1.3em;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      margin-top: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .accordion:hover {
-      background-color: #ff9fb2;
-      transform: translateY(-5px);
-    }
-
-    .active, .accordion:hover {
-      background-color: #ff80a6;
-    }
-
-    /* Accordion Content */
-    .panel {
-      padding: 0 18px;
-      background-color: white;
-      display: none;
-      font-size: 1.1em;
-      line-height: 1.8;
-      color: #555;
-      margin-top: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Button Styles */
-    button {
-      background-color: #ff6b81;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1.3em;
-      margin-top: 20px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    button:hover {
-      background-color: #ff4d6a;
-      transform: scale(1.05);
-    }
-
-    /* Flower Animation */
-    .flower {
-      position: absolute;
-      bottom: -10%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 30px;
-      color: #ffb6c1;
-      animation: flowerAnimation 5s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    @keyframes flowerAnimation {
-      0% { opacity: 0; transform: translateY(50%) rotate(0deg); }
-      50% { opacity: 1; transform: translateY(0) rotate(180deg); }
-      100% { opacity: 0; transform: translateY(-50%) rotate(360deg); }
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5em;
-      }
-
-      h2 {
-        font-size: 1.4em;
-      }
-
-      .accordion {
-        font-size: 1.2em;
-        padding: 16px;
-      }
-
-      .panel p {
-        font-size: 1.1em;
-      }
-
-      button {
-        width: 100%;
-        padding: 12px;
-        font-size: 1.2em;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      h2 {
-        font-size: 1.2em;
-      }
-
-      .accordion {
-        font-size: 1.1em;
-      }
-
-      .panel p {
-        font-size: 1em;
-      }
-
-      button {
-        width: 100%;
-        padding: 12px;
-        font-size: 1.1em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -243,13 +38,13 @@
       <button class="accordion">Hur du gör mig glad</button>
       <div class="panel">
         <p>Du har den här fantastiska förmågan att få mig att skratta, även när saker inte känns så bra. Jag älskar de små sakerna som du gör utan att ens tänka på det – ditt skratt, din värme och hur du alltid får mig att känna mig bekväm och förstådd.</p>
-        <p>Det känns som om vi kan prata om allt, och ingen av oss dömer. Det skapar ett sådant förtroende och gör att jag känner mig sedd och hörd på ett sätt jag sällan upplever med andra. Det är så mycket du gör för mig, och jag vill bara säga tack för att du finns.</p>
+        <p>Det känns som om vi kan prata om allt, och ingen av oss dömer. Det skapar ett sådant förtroende och gör att jag känner mig sedd och hörd på ett sätt jag sällan upplever med andra. Och för det är jag verkligen tacksam.</p>
       </div>
 
-      <button class="accordion">Till slut</button>
+      <button class="accordion">Jag gillar dig</button>
       <div class="panel">
-        <p>Jag vill att du ska veta att du betyder otroligt mycket för mig. Du är mer än en vän för mig, och jag hoppas att vi kommer att fortsätta skapa minnen tillsammans. Det är något speciellt med oss, och jag tror verkligen att vi har en stark förbindelse som vi båda värderar mycket.</p>
-        <p>Så här är min lilla hemlighet: Jag gillar dig mer än bara som vän, men jag vill att du ska känna dig helt bekväm. Jag vill bara att du ska veta att jag bryr mig mycket om dig, oavsett vad.</p>
+        <p>Det finns en sak som jag har velat säga länge, men jag har inte riktigt vetat hur jag ska uttrycka mig. Du betyder mer för mig än bara en vän. Jag tycker om dig på ett sätt som går bortom det vanliga vänskapliga bandet.</p>
+        <p>Jag vill att du ska veta detta för att det känns viktigt för mig att vara ärlig, men samtidigt vill jag inte göra dig obekväm. Det handlar bara om att du är en otroligt viktig person i mitt liv, och jag bryr mig verkligen om dig.</p>
       </div>
     </div>
   </div>
@@ -268,6 +63,6 @@
       });
     }
   </script>
-
+  
 </body>
 </html>
