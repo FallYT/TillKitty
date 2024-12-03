@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Med Kärlek till Kitty</title>
+  <title>Till Kitty - Från en nära vän</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
@@ -15,110 +15,88 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(45deg, #ff7eb9, #ff65a3);
-      color: #fff;
+      background: linear-gradient(45deg, #7f8fa6, #f9cdda);
+      color: #333;
       overflow: hidden;
+      flex-direction: column;
     }
 
-    /* Main Container */
     .container {
       text-align: center;
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
       padding: 40px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
     }
 
-    /* Title and Heading */
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       font-weight: 600;
       margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 0.5s;
+      color: #2e2b8d;
     }
 
     h2 {
       font-size: 1.5em;
-      font-weight: 400;
-      margin-top: 0;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 1s;
+      color: #777;
+      margin-bottom: 20px;
     }
 
-    /* Paragraphs */
-    .content p {
+    .accordion {
+      background-color: #f0f0f0;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.2em;
+      transition: background-color 0.4s ease;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .accordion:hover {
+      background-color: #f1f1f1;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ff9f9f;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
       font-size: 1.1em;
-      margin: 20px 0;
-      line-height: 1.8;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
+      border-radius: 5px;
+      margin-top: 10px;
     }
 
-    .content p:nth-child(1) {
-      animation-delay: 2s;
+    .content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin: 15px 0;
     }
 
-    .content p:nth-child(2) {
-      animation-delay: 3s;
-    }
-
-    .content p:nth-child(3) {
-      animation-delay: 4s;
-    }
-
-    /* Hover Effect for Text */
-    .content p:hover {
-      color: #ffecb3;
-      transform: scale(1.05);
-      transition: all 0.3s ease;
-    }
-
-    /* Button */
-    .button {
-      padding: 12px 25px;
-      background: #ff65a3;
+    button {
+      background-color: #7f8fa6;
+      color: white;
+      padding: 15px 30px;
       border: none;
       border-radius: 5px;
-      color: #fff;
-      font-size: 1.2em;
       cursor: pointer;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 5s;
+      font-size: 1.3em;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
     }
 
-    .button:hover {
-      background: #ff7eb9;
-    }
-
-    /* Animation Keyframes */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Scroll Animations */
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    button:hover {
+      background-color: #6a7d93;
     }
   </style>
 </head>
@@ -126,24 +104,51 @@
 
   <div class="container">
     <h1>Till Kitty</h1>
-    <h2>Från hjärtat med kärlek</h2>
+    <h2>En kärleksfull hälsning från en nära vän</h2>
 
     <div class="content">
-      <p>Hej Kitty! Jag vill börja med att säga att du betyder så mycket för mig. Ditt skratt gör världen ljusare, och din vänlighet inspirerar mig varje dag.</p>
-      <p>Jag älskar hur du ser på världen med så mycket glädje och optimism. Det är en gåva att få dela min tid med någon som har så mycket värme och kärlek i sitt hjärta.</p>
-      <p>Jag hoppas att vi tillsammans kan skapa fler magiska stunder, skratt och minnen. Du är en så underbar person och jag är tacksam för varje ögonblick vi delar.</p>
-    </div>
+      <button class="accordion">Vänskapens värde</button>
+      <div class="panel">
+        <p>Hej Kitty! Jag vill börja med att säga att du är en otrolig vän. Att få spendera tid tillsammans och dela våra tankar har alltid varit något jag uppskattar enormt. Din närvaro gör alla stunder bättre och du har förmågan att göra även de tuffaste dagarna ljusare.</p>
+        <p>Jag vill verkligen att du ska veta hur viktig du är för mig, även om det ibland är svårt att hitta rätt ord. Du är en sådan stark, omtänksam och rolig person, och jag ser verkligen fram emot alla våra framtida äventyr.</p>
+      </div>
 
-    <button class="button" onclick="alert('Jag älskar dig, Kitty!')">Jag älskar dig</button>
+      <button class="accordion">Hur du gör mig glad</button>
+      <div class="panel">
+        <p>Det finns så många små saker som du gör varje dag som gör mig glad. Ditt skratt, din värme och hur du alltid ser det bästa i alla runt omkring dig är verkligen inspirerande.</p>
+        <p>Att prata med dig, eller bara vara i din närhet, får mig att känna mig mer förstådd och på något sätt som om världen känns lite lättare. Jag uppskattar verkligen varje stund vi delar, och det är något som gör att jag alltid ser fram emot att vara nära dig.</p>
+      </div>
+
+      <button class="accordion">Det som gör dig unik</button>
+      <div class="panel">
+        <p>Det som gör dig så speciell är inte bara din humor och ditt skratt, utan även ditt stora hjärta. Du är någon som verkligen bryr dig om de runt omkring dig och det är något jag beundrar väldigt mycket.</p>
+        <p>Jag känner mig så lycklig över att ha dig som vän, och jag hoppas att vi kan fortsätta att bygga på denna vänskap i många år framöver. Din energi smittar verkligen av sig, och du får alla att känna sig välkomna och omtyckta.</p>
+      </div>
+
+      <button class="accordion">Avslutning</button>
+      <div class="panel">
+        <p>Det här kanske inte är något som jag ofta säger till dig, men jag vill att du ska veta hur mycket du betyder för mig. Jag hoppas att vi kan fortsätta vara nära vänner och att våra vägar i livet alltid kommer att korsas. Jag är så tacksam för dig och för allt du ger till världen, inte bara till mig, utan till alla du träffar.</p>
+        <p>Jag ser verkligen fram emot alla de stunder vi kommer att dela framöver, oavsett om det är stora äventyr eller bara små, lugna stunder tillsammans. Jag hoppas att du känner att du alltid kan vara dig själv med mig, och att vi alltid kommer att vara där för varandra.</p>
+      </div>
+
+      <button onclick="alert('Jag är så glad att ha dig som vän, Kitty!')">Jag är glad att ha dig som vän!</button>
+    </div>
   </div>
 
   <script>
-    // Animation delays and scroll effect
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.content p').forEach((el, index) => {
-        el.style.animationDelay = `${2 + index}s`; // Adjust delay for each paragraph
+    // Accordion functionality
+    var acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
       });
-    });
+    }
   </script>
 </body>
 </html>
