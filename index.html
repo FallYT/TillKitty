@@ -15,50 +15,50 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(45deg, #ffccd5, #ffb6c1);
+      background: #f8f8f8; /* Ljus bakgrundsfärg för ett rent och modernt utseende */
       color: #333;
       overflow: hidden;
       flex-direction: column;
-      background-size: 200% 200%;
-      animation: gradientAnimation 6s ease infinite;
     }
 
-    @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
+    /* Container */
     .container {
       text-align: center;
       max-width: 900px;
       width: 100%;
       padding: 40px;
-      background: rgba(255, 255, 255, 0.9);
+      background: #fff;
       border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      margin: 10px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
+      transition: all 0.3s ease-in-out;
     }
 
+    .container:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      transform: scale(1.03);
+    }
+
+    /* Header */
     h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       font-weight: 600;
-      margin-bottom: 20px;
       color: #ff6b81;
+      margin-bottom: 20px;
       animation: fadeIn 1s ease-in-out;
     }
 
     h2 {
       font-size: 1.5em;
-      color: #666;
+      color: #555;
       margin-bottom: 20px;
       animation: fadeIn 1.5s ease-in-out;
     }
 
+    /* Accordion Styles */
     .accordion {
-      background-color: #f9c5d1;
+      background-color: #ffccd5;
       color: #444;
       cursor: pointer;
       padding: 18px;
@@ -67,7 +67,7 @@
       text-align: left;
       outline: none;
       font-size: 1.3em;
-      transition: background-color 0.4s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
       margin-top: 10px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -75,29 +75,27 @@
 
     .accordion:hover {
       background-color: #ff9fb2;
+      transform: translateY(-5px);
     }
 
     .active, .accordion:hover {
       background-color: #ff80a6;
     }
 
+    /* Accordion Content */
     .panel {
       padding: 0 18px;
       background-color: white;
       display: none;
-      overflow: hidden;
       font-size: 1.1em;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-
-    .panel p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      margin: 20px 0;
+      line-height: 1.8;
       color: #555;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
+    /* Button Styles */
     button {
       background-color: #ff6b81;
       color: white;
@@ -107,57 +105,51 @@
       cursor: pointer;
       font-size: 1.3em;
       margin-top: 20px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
       background-color: #ff4d6a;
+      transform: scale(1.05);
     }
 
     /* Heart Animation */
     @keyframes hearts {
-      0% {
-        transform: scale(0);
-        opacity: 0;
-      }
-      50% {
-        transform: scale(1.5);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0);
-        opacity: 0;
-      }
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(0); opacity: 0; }
     }
 
     .hearts {
       position: absolute;
-      top: 0;
+      top: -10%;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 24px;
+      font-size: 36px;
       color: #ff80a6;
-      animation: hearts 3s ease-in-out infinite;
+      animation: hearts 4s ease-in-out infinite;
       z-index: -1;
     }
 
+    /* Flower Animation */
     .flower {
       position: absolute;
-      bottom: -40px;
-      right: 50%;
-      transform: translateX(50%);
+      bottom: -10%;
+      left: 50%;
+      transform: translateX(-50%);
       font-size: 30px;
-      animation: flowerAnimation 4s ease-in-out infinite;
+      color: #ffb6c1;
+      animation: flowerAnimation 5s ease-in-out infinite;
       z-index: -1;
     }
 
     @keyframes flowerAnimation {
-      0% { transform: translateX(50%) rotate(0deg); opacity: 0; }
-      50% { opacity: 1; transform: translateX(50%) rotate(90deg); }
-      100% { transform: translateX(50%) rotate(180deg); opacity: 0; }
+      0% { opacity: 0; transform: translateY(50%) rotate(0deg); }
+      50% { opacity: 1; transform: translateY(0) rotate(180deg); }
+      100% { opacity: 0; transform: translateY(-50%) rotate(360deg); }
     }
 
-    /* Mobile Styling */
+    /* Mobile Responsive */
     @media (max-width: 768px) {
       h1 {
         font-size: 2.5em;
