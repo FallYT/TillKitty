@@ -15,42 +15,72 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f8f8f8; /* Ljus bakgrundsfärg för ett rent och modernt utseende */
+      background: #f8f8f8;
       color: #333;
       overflow: hidden;
       flex-direction: column;
+      position: relative;
     }
 
-    /* Container */
+    /* Background Animation */
+    @keyframes backgroundColorChange {
+      0% { background-color: #ff6b81; }
+      50% { background-color: #ffccd5; }
+      100% { background-color: #ffb6c1; }
+    }
+
+    /* Hearts and Birds Animation */
+    @keyframes heartsAnimation {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(0); opacity: 0; }
+    }
+
+    .hearts {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 36px;
+      color: #ff80a6;
+      animation: heartsAnimation 4s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .birds {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      animation: heartsAnimation 6s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    /* Container Styles */
     .container {
       text-align: center;
-      max-width: 900px;
+      max-width: 90%;
       width: 100%;
-      padding: 40px;
+      padding: 30px;
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       position: relative;
-      overflow: hidden;
       transition: all 0.3s ease-in-out;
     }
 
-    .container:hover {
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      transform: scale(1.03);
-    }
-
-    /* Header */
+    /* Title Styles */
     h1 {
-      font-size: 3.5em;
+      font-size: 3em;
       font-weight: 600;
       color: #ff6b81;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       animation: fadeIn 1s ease-in-out;
     }
 
     h2 {
-      font-size: 1.5em;
+      font-size: 1.3em;
       color: #555;
       margin-bottom: 20px;
       animation: fadeIn 1.5s ease-in-out;
@@ -61,7 +91,7 @@
       background-color: #ffccd5;
       color: #444;
       cursor: pointer;
-      padding: 18px;
+      padding: 20px;
       width: 100%;
       border: none;
       text-align: left;
@@ -111,24 +141,6 @@
     button:hover {
       background-color: #ff4d6a;
       transform: scale(1.05);
-    }
-
-    /* Heart Animation */
-    @keyframes hearts {
-      0% { transform: scale(0); opacity: 0; }
-      50% { transform: scale(1.5); opacity: 1; }
-      100% { transform: scale(0); opacity: 0; }
-    }
-
-    .hearts {
-      position: absolute;
-      top: -10%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 36px;
-      color: #ff80a6;
-      animation: hearts 4s ease-in-out infinite;
-      z-index: -1;
     }
 
     /* Flower Animation */
@@ -207,6 +219,11 @@
     ❤️❤️❤️❤️
   </div>
 
+  <!-- Animated Birds -->
+  <div class="birds">
+    🕊️🕊️🕊️
+  </div>
+
   <!-- Flower Animation -->
   <div class="flower">
     🌸🌼🌸
@@ -234,7 +251,6 @@
         <p>Jag vill att du ska veta att du betyder otroligt mycket för mig. Du är mer än en vän för mig, och jag hoppas att vi kommer att fortsätta skapa minnen tillsammans. Det är något speciellt med oss, och jag tror verkligen att vi har en stark förbindelse som vi båda värderar mycket.</p>
         <p>Så här är min lilla hemlighet: Jag gillar dig mer än bara som vän, men jag vill att du ska känna dig helt bekväm. Jag vill bara att du ska veta att jag bryr mig mycket om dig, oavsett vad.</p>
       </div>
-
     </div>
   </div>
 
