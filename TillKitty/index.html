@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Med Kärlek till Kitty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(45deg, #ff7eb9, #ff65a3);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Main Container */
+    .container {
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Title and Heading */
+    h1 {
+      font-size: 3em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 0.5s;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: 400;
+      margin-top: 0;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1s;
+    }
+
+    /* Paragraphs */
+    .content p {
+      font-size: 1.1em;
+      margin: 20px 0;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    .content p:nth-child(1) {
+      animation-delay: 2s;
+    }
+
+    .content p:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    .content p:nth-child(3) {
+      animation-delay: 4s;
+    }
+
+    /* Hover Effect for Text */
+    .content p:hover {
+      color: #ffecb3;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+
+    /* Button */
+    .button {
+      padding: 12px 25px;
+      background: #ff65a3;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.2em;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 5s;
+    }
+
+    .button:hover {
+      background: #ff7eb9;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll Animations */
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Till Kitty</h1>
+    <h2>Från hjärtat med kärlek</h2>
+
+    <div class="content">
+      <p>Hej Kitty! Jag vill börja med att säga att du betyder så mycket för mig. Ditt skratt gör världen ljusare, och din vänlighet inspirerar mig varje dag.</p>
+      <p>Jag älskar hur du ser på världen med så mycket glädje och optimism. Det är en gåva att få dela min tid med någon som har så mycket värme och kärlek i sitt hjärta.</p>
+      <p>Jag hoppas att vi tillsammans kan skapa fler magiska stunder, skratt och minnen. Du är en så underbar person och jag är tacksam för varje ögonblick vi delar.</p>
+    </div>
+
+    <button class="button" onclick="alert('Jag älskar dig, Kitty!')">Jag älskar dig</button>
+  </div>
+
+  <script>
+    // Animation delays and scroll effect
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.content p').forEach((el, index) => {
+        el.style.animationDelay = `${2 + index}s`; // Adjust delay for each paragraph
+      });
+    });
+  </script>
+</body>
+</html>
